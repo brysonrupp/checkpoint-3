@@ -26,12 +26,56 @@
     </nav>
   </header>
   <main>
+    <!-- //NOTE - notes files goes here -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-12" id="notes">
         </div>
       </div>
+    </div>
+
+    <!-- submit new note button is here -->
+
+    <div class="container-fluid">
+      <div class="row my-3">
+        <div class="col-4 m-auto" id="notes-note">
+
+          <form onsubmit="app.notesController.createNote()">
+
+            <input required type="text" minlength="3" maxlength="15" class="form-control" id="note-name"
+              placeholder="Enter Note" name="name">
+            <label for="name">Add Note</label>
+
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
+            <label for="exampleColorInput" class="form-label"></label>
+            <input type="color" class="form-control form-control-color" id="color" name="color" value="#563d7c"
+              title="Choose your color">
+          </form>
+        </div>
+        <div class="col-8">
+          <section id="current-note" class="row justify-content-center">
+            <!-- <form onsubmit="app.notesController.createNote()">
+
+            </form> -->
+          </section>
+
+        </div>
+        <!-- <section id="active-note" class="row">
+          <div class="col-12">
+            <div class="col-8">note</div>
+            <div class="col-10">
+              <button class="btn btn-info"><i class="mdi mdi-pencil"></i></button>
+              <button class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
+            </div>
+            <button type="submit" class="btn btn-success mt-3" onclick="app.notesController.saveNote()">Save</button>
+            <div class="col-12">10/10/2022</div>
+            <textarea class="col-12 note" name="" id="" cols="50" rows="30">
+
+                  </textarea>
+
+        </section> -->
+      </div>
+
     </div>
   </main>
   <footer class="bg-dark text-light">
