@@ -11,7 +11,7 @@ export class Note {
     }
 
     get ListTemplate() {
-        return `
+        return /*html*/`
         <li class="selectable" onclick="app.notesController.setActiveNote('${this.id}')">${this.name} ${this.ComputeDate}<i style="color:${this.color}"  class="mdi mdi-square" style=></i></li> 
         `
 
@@ -20,7 +20,7 @@ export class Note {
 
 
     get ActiveTemplate() {
-        return `
+        return /*html*/`
         <div class="col-8 text-center"><h4>${this.name} <i style="color:${this.color}"class="mdi mdi-square"></i></h4></div>
     <div class="col-4">
     <button class="btn btn-danger" onclick="app.notesController.deleteNote('${this.id}')"><i class="mdi mdi-delete"></i></button>

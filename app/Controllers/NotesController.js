@@ -26,18 +26,20 @@ function _drawActiveNote() {
 
 }
 
-// function _drawNotesCount() {
-//     let count = appState.notes.length
-//     setHTML('count', count)
-// }
+function _drawNotesCount() {
+    let count = appState.notes.length
+    // console.log(document.getElementById('notesCount'))
+    setText('notesCount', count.toString())
+}
 
 export class NotesController {
     constructor() {
         // console.log('test controller')
         appState.on('notes', _drawNotes)
         appState.on('activeNote', _drawActiveNote)
+        appState.on('notes', _drawNotesCount)
         _drawNotes()
-
+        _drawNotesCount()
     }
 
     async deleteNote(noteId) {
